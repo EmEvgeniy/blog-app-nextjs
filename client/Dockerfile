@@ -22,5 +22,5 @@ COPY .nginx/*.conf /etc/nginx/conf.d/
 EXPOSE 80
 # RUN cat /etc/nginx/conf.d/default.conf
 # RUN rm /etc/nginx/conf.d/default.conf
-
+CMD ["npm", "start"]
 CMD ["nginx", "-g", "daemon off;"]
