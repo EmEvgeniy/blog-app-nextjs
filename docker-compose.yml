@@ -10,10 +10,16 @@ services:
   client:
     build: 
       context: ./client
+    networks:
+      - admin-js
+  nginx:
+    build:
+      context: ./.nginx
     ports:
       - "8081:80"
     networks:
       - admin-js
+  
 networks:
   admin-js:
     driver: bridge
