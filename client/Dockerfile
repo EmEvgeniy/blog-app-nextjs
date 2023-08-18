@@ -13,14 +13,14 @@ RUN npm run build
 FROM nginx:alpine
 
 # Копируем статические файлы из этапа сборки
-COPY --from=build /app/.next /usr/share/nginx/html
+# COPY --from=build /app/.next /usr/share/nginx/html
 
 # Копируем ваш файл конфигурации
 COPY .nginx/*.conf /etc/nginx/conf.d/
 
 
-EXPOSE 80
+# EXPOSE 80
 # RUN cat /etc/nginx/conf.d/default.conf
 # RUN rm /etc/nginx/conf.d/default.conf
-CMD ["npm","run", "start"]
+CMD ["npm", "run", "start"]
 CMD ["nginx", "-g", "daemon off;"]
