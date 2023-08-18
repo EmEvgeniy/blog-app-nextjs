@@ -1,0 +1,19 @@
+services:
+  api:
+    container_name: backend
+    build: 
+      context: ./api
+    ports:
+      - "8000"
+    networks:
+      - admin-js
+  client:
+    build: 
+      context: ./client
+    ports:
+      - "8081:80"
+    networks:
+      - admin-js
+networks:
+  admin-js:
+    driver: bridge
