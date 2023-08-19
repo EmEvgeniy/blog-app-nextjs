@@ -2,6 +2,7 @@ import { Router } from "express";
 import * as CategoryController from "../controllers/CategoryController.js";
 import { categoryValidation } from "../validations/category.js";
 import checkAuth from "../utils/checkAuth.js";
+import handleErrors from "../utils/handleErrors.js";
 
 const CategoryRouter = new Router();
 
@@ -9,6 +10,7 @@ const CategoryRouter = new Router();
 CategoryRouter.post(
 	"/category/add",
 	checkAuth,	
+	handleErrors,
 	categoryValidation,
 	CategoryController.create
 );

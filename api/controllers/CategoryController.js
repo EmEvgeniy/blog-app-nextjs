@@ -5,12 +5,7 @@ import CategoryModel from "../models/Category.js";
 
 export const create = async (req, res) => {
 	try {
-		const errors = validationResult(req);
-
-		if (!errors.isEmpty()) {
-			return res.status(400).json(errors.array());
-		}
-
+	
 		const doc = CategoryModel({
 			title: req.body.title,
 			popular: req.body.popular,
