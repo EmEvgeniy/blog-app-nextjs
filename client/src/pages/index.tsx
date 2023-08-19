@@ -1,7 +1,21 @@
+import MainCategory from "@/conponents/main/mainCategory/MainCategory";
 import MainHero from "@/conponents/main/mainHero/MainHero";
 import Head from "next/head";
+import { FC } from "react";
 
-export default function Home() {
+interface Category {
+	_id: string;
+	lang: string;
+	popular: boolean;
+	title: string;
+	viewCount: number;
+}
+
+interface HomeProps {
+	data: Category[];
+}
+
+const Home: FC<HomeProps> = ({ data }) => {
 	return (
 		<>
 			<Head>
@@ -12,7 +26,22 @@ export default function Home() {
 			</Head>
 			<main style={{ height: "200vh" }}>
 				<MainHero />
+				<MainCategory categories={data} />
 			</main>
 		</>
 	);
+};
+
+export async function getServerSideProps() {
+	// Получите данные из вашего источника (API, базы данных и т.д.)
+	const response = await fetch("https://api.puputravel.com/api/categories");
+	const data: Category[] = await response.json();
+
+	return {
+		props: {
+			data, // Передаем данные компоненту как свойство
+		},
+	};
 }
+
+export default Home;
