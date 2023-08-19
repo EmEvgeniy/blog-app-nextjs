@@ -1,0 +1,44 @@
+.header{
+	background-color: #232536;
+	color: #fff;
+	position: sticky;
+	z-index: 2;
+	top: 0;
+}
+.inner{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	font-size: 20px;
+}
+.header .inner nav{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+.burger{
+	display: none;
+}
+@media(max-width: 920px){
+	.inner{
+		font-size: 16px;
+		gap: 20px;
+	}
+}
+@media(max-width: 768px){
+	.inner{
+		font-size: 14px;
+		gap: 20px;
+	}
+	.header .inner nav{
+		display: none;
+	}
+	.logo {
+		width: 20%;
+	}
+	.burger{
+		display: block;
+	}
+}

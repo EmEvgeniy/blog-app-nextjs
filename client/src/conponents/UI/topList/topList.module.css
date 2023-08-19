@@ -1,0 +1,15 @@
+.TopList{
+	flex: 1;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.TopList ul {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.TopList ul li {
+	padding:  0 20px;
+	border-right: 1px solid #232536;
+}

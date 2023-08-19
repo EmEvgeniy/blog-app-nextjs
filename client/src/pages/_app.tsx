@@ -1,6 +1,16 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import "normalize.css";
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+import Wrapper from "@/conponents/UI/wrapper/Wrapper";
+import { Provider } from "react-redux";
+import store from "@/store/store";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+	return (
+		<Provider store={store}>
+			<Wrapper>
+				<Component {...pageProps} />
+			</Wrapper>
+		</Provider>
+	);
 }
