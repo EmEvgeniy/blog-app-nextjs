@@ -50,7 +50,8 @@ export const update = async (req, res) => {
 		},{
 			title: req.body.title,
 			popular: req.body.popular,
-			viewCount: req.body.viewCount
+			viewCount: req.body.viewCount,
+			lang: req.body.lang
 		})
 		res.json({success: true})
 	} catch (e) {
