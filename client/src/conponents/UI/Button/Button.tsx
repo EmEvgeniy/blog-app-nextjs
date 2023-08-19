@@ -1,6 +1,7 @@
 import { FC } from "react";
 import classes from "./button.module.css";
 import Link from "next/link";
+import {motion} from 'framer-motion'
 
 interface buttonInterface {
 	title: string;
