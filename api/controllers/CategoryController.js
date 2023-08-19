@@ -14,6 +14,7 @@ export const create = async (req, res) => {
 		const doc = CategoryModel({
 			title: req.body.title,
 			popular: req.body.popular,
+			lang: req.body.lang
 		});
 		const title = await CategoryModel.findOne({
 			title: req.body.title,
